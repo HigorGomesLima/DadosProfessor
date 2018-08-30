@@ -39,12 +39,12 @@ public class PersistenciaLista {
 
             listaDados = new ArrayList<Professor>();
             Iterator<String> itListaProf = listaProf.iterator();
-            Iterator<String> itListaDet = listaDet.iterator();
+            Iterator<String> itListaDet;
             
             while(itListaProf.hasNext()){
+                itListaDet = listaDet.iterator();
                 String aux = itListaProf.next();
                 String[] auxS = aux.split(";");
-                System.out.println(auxS[0]);
                 while(itListaDet.hasNext()){
                     String auxDet = itListaDet.next();
                     String[] auxDetS = auxDet.split(";");
@@ -56,19 +56,12 @@ public class PersistenciaLista {
                         atual.setTitulacao(auxDetS[2]);
                         atual.setHorista(auxDetS[3]);
                         listaDados.add(atual);
-                        System.out.println(atual.getNome());
                     }
                 }
             }
-            
         } catch (IOException e) {
             JOptionPane.showMessageDialog(null, "Não foi possivel abrir o arquivo");
         }
-    }
-    
-    public Iterator getInformacao(){
-        Iterator retorno = listaDados.iterator();
-        return retorno;
     }
 
 }
