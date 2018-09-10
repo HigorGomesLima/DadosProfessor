@@ -24,7 +24,6 @@ public class PersistenciaLista {
                 linha = lerArq.readLine();
             }
             arq.close();
-
             //Leitura arquivo DadosGerais.csv 
             arq = new FileReader("DadosGerais.csv");
             lerArq = new BufferedReader(arq);
